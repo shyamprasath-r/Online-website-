@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NovaMart | Smart Shopping Portal</title>
+<style>
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f5f8;color:#222;line-height:1.5;}
+header{position:sticky;top:0;background:#121929;color:#fff;z-index:2;box-shadow:0 2px 6px rgba(0,0,0,.2);}
+nav{display:flex;justify-content:space-between;align-items:center;padding:0.75rem 1.5rem;max-width:1080px;margin:auto;}
+nav h1{margin:0;font-size:1.2rem;}
+.menu{display:flex;gap:1rem;list-style:none;padding:0;margin:0;}
+.menu a{color:#fff;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border-radius:4px;}
+.menu a:hover,.menu a:focus{background:#2f59ff;}
+main{max-width:1080px;margin:auto;padding:1.5rem;}
+section{margin-bottom:3rem;}
+.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;align-items:center;background:#fff;border-radius:12px;padding:1.5rem;box-shadow:0 5px 20px rgba(0,0,0,.08);}
+.hero img{width:100%;border-radius:12px;object-fit:cover;min-height:200px;}
+.btn{display:inline-block;background:#2f59ff;color:#fff;padding:0.6rem 1.2rem;border-radius:6px;text-decoration:none;font-weight:600;margin-top:1rem;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;}
+.card{background:#fff;border-radius:10px;padding:1rem;box-shadow:0 4px 14px rgba(0,0,0,.07);}
+.card img{width:100%;border-radius:8px;height:140px;object-fit:cover;}
+form{display:grid;gap:0.75rem;background:#fff;padding:1rem;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.08);}
+label{display:flex;flex-direction:column;font-weight:600;gap:0.3rem;}
+input,textarea{padding:0.55rem 0.6rem;border:1px solid #ccd3e0;border-radius:6px;font-size:0.95rem;}
+.split{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+.lists{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;}
+.list-card{background:#fff;padding:1rem;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.07);}
+.list-card h3{margin-top:0;}
+.status{font-size:0.9rem;color:#d14343;}
+footer{padding:2rem 1.5rem;text-align:center;background:#121929;color:#fff;}
+@media(max-width:600px){nav{flex-direction:column;gap:0.75rem;}}
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <h1>NovaMart</h1>
+    <ul class="menu"><li><a href="#home">Home</a></li><li><a href="#products">Products</a></li><li><a href="#auth">Register/Login</a></li><li><a href="#about">About Us</a></li><li><a href="#contact">Contact Us</a></li></ul>
+  </nav></header><main>
+  <section id="home" class="hero">
+    <div>
+      <h2>Discover Handpicked Tech & Lifestyle Essentials</h2>
+      <p>Shop an AI-curated collection of gadgets, fashion, and home upgrades tailored to the way you live. Transparent pricing, lightning delivery, and trusted reviews ensure every cart turns into joy.</p>
+      <a class="btn" href="#products">Explore Catalog</a>
+    </div>
+    <img src="https://image.pollinations.ai/prompt/Futuristic%20ecommerce%20marketplace%20with%20customers%20shopping" alt="AI generated futuristic shopping scene" />
+  </section><section id="products">
+    <h2>Featured Product Stories</h2>
+    <div class="cards">
+      <article class="card">
+        <img src="https://image.pollinations.ai/prompt/AI%20generated%20smart%20home%20speaker%20product%20photo" alt="AI smart speaker" />
+        <h3>Luna Smart Sphere</h3>
+        <p>Adaptive assistant with room-aware audio and privacy-first controls.</p>
+      </article>
+      <article class="card">
+        <img src="https://image.pollinations.ai/prompt/AI%20generated%20eco%20friendly%20fashion%20collection" alt="AI eco fashion" />
+        <h3>Eco-Thread Capsule</h3>
+        <p>Organic fabrics woven with AI fit guidance for every body type.</p>
+      </article>
+      <article class="card">
+        <img src="https://image.pollinations.ai/prompt/AI%20generated%20gaming%20laptop%20on%20neon%20desk" alt="AI gaming laptop" />
+        <h3>Vortex Pro 16</h3>
+        <p>AI-boosted GPU scheduling keeps frame rates silky even at 4K.</p>
+      </article>
+    </div>
+  </section><section id="auth">
+    <h2>Join NovaMart</h2>
+    <div class="split">
+      <form id="registerForm" novalidate>
+        <h3>Create Account</h3>
+        <label for="regName">Full Name<input id="regName" name="regName" type="text" required minlength="2" placeholder="e.g. Aria Patel" /></label>
+        <label for="regEmail">Email<input id="regEmail" name="regEmail" type="email" required placeholder="you@example.com" /></label>
+        <label for="regPassword">Password<input id="regPassword" name="regPassword" type="password" required pattern="(?=.*[A-Z])(?=.*\\d).{8,}" placeholder="8+ chars, 1 number, 1 capital" /></label>
+        <p class="status" id="regStatus"></p>
+        <button class="btn" type="submit">Sign Up</button>
+      </form>
+      <form id="loginForm" novalidate>
+        <h3>Welcome Back</h3>
+        <label for="logEmail">Email<input id="logEmail" name="logEmail" type="email" required placeholder="you@example.com" /></label>
+        <label for="logPassword">Password<input id="logPassword" name="logPassword" type="password" required minlength="8" placeholder="Your password" /></label>
+        <p class="status" id="logStatus"></p>
+        <button class="btn" type="submit">Log In</button>
+      </form>
+    </div>
+  </section><section id="orders">
+    <h2>Your NovaMart Hub</h2>
+    <div class="lists">
+      <div class="list-card">
+        <h3>Orders</h3>
+        <ul>
+          <li>Order #20891 &mdash; Out for delivery (ETA Today)</li>
+          <li>Order #20745 &mdash; Delivered &amp; awaiting review</li>
+          <li>Order #20688 &mdash; Preparing warehouse pickup</li>
+        </ul>
+      </div>
+      <div class="list-card">
+        <h3>Wishlist</h3>
+        <ul>
+          <li>Aurora Smart Mirror &mdash; Price drop alert set</li>
+          <li>PulseFit Tracker X &mdash; Back in stock next week</li>
+          <li>Neon Brew Barista &mdash; Bundle offer available</li>
+        </ul>
+      </div>
+      <div class="list-card">
+        <h3>Reviews &amp; Comments</h3>
+        <ul>
+          <li>&ldquo;Love the intuitive checkout!&rdquo; &mdash; Priya S.</li>
+          <li>&ldquo;Customer care resolved my query in minutes.&rdquo; &mdash; Omar K.</li>
+          <li>&ldquo;Wishlist syncing is seamless across devices.&rdquo; &mdash; Mei L.</li>
+        </ul>
+      </div>
+      <div class="list-card">
+        <h3>Customer Care</h3>
+        <ul>
+          <li>24/7 chat with certified specialists</li>
+          <li>Smart returns with instant QR codes</li>
+          <li>Priority hotline: 1800-NOVA</li>
+        </ul>
+      </div>
+      <div class="list-card">
+        <h3>Reporting Options</h3>
+        <ul>
+          <li>Report late delivery</li>
+          <li>Flag counterfeit listing</li>
+          <li>Escalate billing discrepancy</li>
+        </ul>
+      </div>
+    </div>
+  </section><section id="about">
+    <h2>About NovaMart</h2>
+    <p>NovaMart blends human insight with ethical AI curation to pair shoppers with products they actually need. From carbon-aware logistics to inclusive design, we partner with creators that prioritize people and the planet.</p>
+  </section><section id="contact">
+    <h2>Talk To Us</h2>
+    <form id="contactForm">
+      <label for="message">How can we help?<textarea id="message" name="message" rows="4" placeholder="Share feedback, ideas, or issues"></textarea></label>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </section></main>
+<footer>
+  <small>&copy; 2025 NovaMart Collective. Built with open-source AI creativity.</small>
+</footer>
+<script>
+const links=document.querySelectorAll('.menu a');links.forEach(link=>link.addEventListener('click',evt=>{evt.preventDefault();document.querySelector(link.getAttribute('href')).scrollIntoView({behavior:'smooth'});}));const regForm=document.getElementById('registerForm');const regStatus=document.getElementById('regStatus');regForm.addEventListener('submit',e=>{e.preventDefault();if(!regForm.checkValidity()){regStatus.textContent='Please provide a valid name, email, and strong password.';}else{regStatus.style.color='#2f8f4e';regStatus.textContent='Registration validated! Ready for backend hookup.';}});const logForm=document.getElementById('loginForm');const logStatus=document.getElementById('logStatus');logForm.addEventListener('submit',e=>{e.preventDefault();if(!logForm.checkValidity()){logStatus.textContent='Enter a registered email and password of 8+ characters.';}else{logStatus.style.color='#2f8f4e';logStatus.textContent='Login validated! Connect API to proceed.';}});const contactForm=document.getElementById('contactForm');contactForm.addEventListener('submit',e=>{e.preventDefault();alert('Message captured! Our team will respond shortly.');contactForm.reset();});
+</script>
+</body>
+</html>
+
